@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from source.Model import model
-from source.features import *
+from Model import model
+from features import *
 app = Flask(__name__)
 
 
@@ -13,37 +13,17 @@ def index():
 def link():
     link = request.form['word']
     prediction = model.predict(pandas_frame(main(link)))
-    return render_template('pred.html', prediction = prediction)
+    return render_template('pred.html', prediction=prediction)
 
 
-@app.route('/gotomain' , methods=['GET', 'POST'])
+@app.route('/gotomain', methods=['GET', 'POST'])
 def page1():
     react = request.form['aboutus']
     return render_template('Main.html')
 
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', debug=True, port=3000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    app.run(host='0.0.0.0', debug=True, port=3000)
 
 
 # import pandas as pd

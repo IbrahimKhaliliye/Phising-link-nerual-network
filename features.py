@@ -1,6 +1,6 @@
 import requests
 import re
-from source.paterns import *
+from paterns import *
 import urllib.parse
 from bs4 import BeautifulSoup
 import socket
